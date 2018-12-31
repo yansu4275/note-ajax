@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<script type="text/javascript">
+			window.onload = function(){
+				//1.获取 a 节点，并为其添加 onclick 响应函数
+				document.getElementsByTagName("a")[0].onclick = function(){
+
+					//3.创建一个 XMLHttpRequest 对象
+					var request = new XMLHttpRequest();
+					
+					//4.准备发送请求的函数： url
+					var url = this.href;
+					var method = "GET"
+					
+					//5.调用 XMLHttpRequest 对象的 open 方法
+					request.open(method, url);
+					
+					//6.调用 XMLHttpRequest 对象的 send 方法
+					request.send(null);
+					
+					//7.为 XMLHttpRequest 对象添加onreadystatechange 响应函数
+					request.onreadystatechange = function(){
+						
+					}
+					//8.判断响应是否完成： XMLHttpRequest 对象的 readyState 属性值为 4 的时候
+					
+					//9.在判断响应是否可用：XMLHttpRequest 对象的 status 属性值为 200
+					
+					//10.打印响应结果： responseText
+					
+					//2.取消 a 节点默认行为
+					return false;
+				}
+			}
+			
+			
+		</script>
+		
+	</head>
+	<body>
+		<a href="helloajax">ajax</a>
+	</body>
+</html>
